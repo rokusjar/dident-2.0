@@ -1,0 +1,254 @@
+/* POMOCNE TRIDY A OBECNE NASTAVENI ----------------------------------------------------------------------------------*/
+html, body{
+    /* BARVA POZADI foundation.css 2613*/
+    padding: 0;
+    margin: 0;
+}
+
+.space-b-u-05{  margin: 0.5em 0 0.5em 0; }
+.space-b-u-1{  margin: 1em 0 1em 0; }
+.space-b-u-2{  margin: 2em 0 2em 0; }
+.space-b-u-3{  margin: 3em 0 3em 0; }
+.space-u-1{ margin-top: 1em; }
+.space-u-5{ margin-top: 5em; }
+.space-u-10{ margin-top: 10em; }
+
+.wrapper{
+    width: 75%;
+    height: auto;
+    margin: 0 auto 0 auto;
+}
+
+.with-background-image{
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-image:url('../images/ordinace4-oriznuta.jpg');
+}
+
+.heading{
+    color: #26b3a3;
+}
+/* -------------------------------------------------------------------------------------------------------------------*/
+/* OFFCANVAS */
+#offCanvas{
+    background-color: #1a1a1b;
+    padding-top: 1em;
+    height: 100vh;
+}
+#offCanvas img{
+    margin-left: 0.5em;
+}
+
+#offCanvas ul li a{
+    text-align: left;
+    font-size: 0.9em;
+    color: #26b3a3;
+}
+/* -------------------------------------------------------------------------------------------------------------------*/
+/* UVODNI OBRAZOVKA --------------------------------------------------------------------------------------------------*/
+.header{
+    min-height: 100vh;
+    resize: vertical;
+    padding: 0 0 0 0;
+    color: #F5F9FA;
+    font-size: 24px;
+    padding-bottom: 2em;
+}
+
+/*Ikony - telefon, email, adresa*/
+.contacts .columns {
+    padding: 0.5%;
+}
+.header .contacts .fa{
+    font-size: 2.5em;
+}
+
+/*Odkazy v menu maji byt bile*/
+.header .top-bar a{
+    color: #F5F9FA;
+    font-size: 15px;
+}
+/*Menu chceme bez pozadi*/
+.header .top-bar{
+    background-color: transparent;
+}
+.header .top-bar *{
+    background-color: transparent;
+}
+
+#mapy{
+    color: #F5F9FA;
+    font-weight: 300;
+    width: 300px;
+}
+/*Wrapper je kvuli tomu aby hover effect nepretrvaval*/
+#mapy-wrapper{
+    margin: 1.3em;
+    padding: 0.7rem 1rem;
+}
+
+#mapa-okno{
+    margin: 0 auto;
+    display: none;
+}
+#mapa-frame{
+    width: 50%;
+}
+
+/*Nastaveni pro mobily*/
+@media only screen and (max-width: 767px) {
+    .header{
+        height: auto;
+        padding-bottom: 2em;
+    }
+    .wrapper{
+        width: 95%;
+    }
+    .heading{
+        padding: 0.5em;
+        text-align: left;
+        background-color: #323638;
+        color: #26b3a3;
+        position: relative;
+        width: 100vw;
+        left: calc(-50vw + 50%);
+    }
+    .with-background-image{
+        background-color: #323638;
+        background-image: none;
+    }
+    #mapy-wrapper{
+        background-color: #26b3a3;
+    }
+    html, body{
+        font-size: 22px;
+    }
+    table{
+        font-size: 16px;
+    }
+    .header .contacts .fa{
+          font-size: 2em;
+    }
+    .header .contacts .columns{
+        margin: 0.5em 0 0.5em 0;
+    }
+    #mapy{
+        color: #F5F9FA;
+        font-weight: 300;
+        width: auto;
+    }
+    #mapa-frame{
+        width: 95%;
+    }
+}
+
+/*Nastaveni pro tablety (na vysku)*/
+@media only screen and (max-width: 992px) {
+    #mapy-wrapper{
+        background-color: #26b3a3;
+    }
+    #mapa-frame{
+        width: 95%;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* AKTUALITY */
+.callout-message{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* CENIK -------------------------------------------------------------------------------------------------------------*/
+#cenik-info{
+    text-align: right;
+    font-size: 0.8em;
+    color: #26b3a3;
+}
+#cenik-info-m{
+    text-align: left;
+    color: #26b3a3;
+    font-size: 0.8em;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* SLUZBY */
+#sluzby .columns ul{
+    margin-left: 2em;
+    margin-top: 0.5em;
+    font-weight: 300;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* GALERIE */
+.orbit-container {
+    height: auto !important;
+    /*max-height: 700px;*/
+    width: auto;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* FOOTER */
+#footer{
+    padding: 1em 0;
+    background-color: #323638;
+    color: #F5F9FA;
+}
+
+#footer p{
+    font-size: 0.7em;
+}
+
+.footer-p-margin{
+    margin: 2em 0;
+    text-align: center;
+}
+
+/*Nastaveni pro mobily*/
+@media only screen and (max-width: 767px) {
+    #footer .columns{
+        margin: 0.5em 0;
+    }
+}
+@media only screen and (max-width: 992px) {
+    #footer .columns{
+        margin: 0.5em 0;
+    }
+}
+/*--------------------------------------------------------------------------------------------------------------------*/
+/* SKROLOVACI SIPKA */
+#back-top {
+    position: fixed;
+    bottom: 15px;
+    right: 5px;
+    z-index: 100;
+}
+
+#back-top a{
+    /*color: rgba(147, 151, 153, 0.8);*/
+    color: rgba(38, 179, 163, 0.8);
+}
+
+#back-top .fa{
+    font-size: 3em;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+#side-sticky-menu{
+    position: fixed;
+    bottom: 40%;
+    right: 0px;
+    z-index: 100;
+    background-color: #323638;
+    text-align: center;
+    font-size: 1.2em;
+}
+#side-sticky-menu li{
+    color: #26b3a3;
+    padding: 0.5rem 0.7rem;
+}
+#side-sticky-menu li:hover{
+    color: #ffffff;
+}
+/*--------------------------------------------------------------------------------------------------------------------*/

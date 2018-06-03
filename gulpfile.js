@@ -59,7 +59,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('bundle-css', function () {
-    return gulp.src('src/assets/**/*.css')
+    return gulp.src('src/styles/**/*.css')
         .pipe(concatCss("styles/bundle.css"))
         .pipe(rename('styles/bundle.min.css'))
         .pipe(cleanCSS())
@@ -68,7 +68,7 @@ gulp.task('bundle-css', function () {
 
 
 gulp.task('bundle-js', function () {
-    return gulp.src('src/assets/**/*.js')
+    return gulp.src(['src/**/jquery.js', 'src/**/!(app)*.js', 'src/**/app.js']) // jQuery goes first, app.js goes last
         .pipe(concat('scripts/bundle.js'))
         .pipe(rename('scripts/scripts.min.js'))
         .pipe(uglify())
@@ -78,6 +78,11 @@ gulp.task('bundle-js', function () {
 gulp.task('images', function () {
     return gulp.src('src/assets/images/*.{png,PNG,jpg,JPG}')
         .pipe(gulp.dest('dist/assets/images/'));
+});
+
+gulp.task('fonts', function () {
+    return gulp.src('src/fonts/*.*')
+        .pipe(gulp.dest('dist/fonts/'));
 });
 
 gulp.task('build-html', function () {
@@ -90,7 +95,7 @@ gulp.task('build-html', function () {
 gulp.task('build', function (callback) {
     runSequence(
         'clean',
-        ['bundle-css', 'bundle-js', 'images'], // this will run in paraller
+        ['bundle-css', 'bundle-js', 'images', 'fonts'], // this will run in paraller
         'build-html',
         callback);
 });

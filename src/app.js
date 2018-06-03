@@ -1,4 +1,3 @@
-
 /* DESKTOP NAVIGACE */
 $("#hodiny-link").click(function() {
     $('html, body').animate({
@@ -181,3 +180,6 @@ $(document).ready(function(){
     });
 
 });
+
+// Without this call Foundation framework will not Start
+$(document).foundation();
